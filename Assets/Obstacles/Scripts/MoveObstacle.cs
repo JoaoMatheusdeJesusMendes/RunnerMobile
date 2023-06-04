@@ -5,9 +5,6 @@ using UnityEngine.UIElements;
 
 public class MoveObstacle : MonoBehaviour
 {
-    //pega rigidybody dos obstaculos
-    [SerializeField] private Rigidbody2D rb;
-    
     //determina velocidade de movimento
     public float speedObstacle = 0.1f;
     // Start is called before the first frame update
