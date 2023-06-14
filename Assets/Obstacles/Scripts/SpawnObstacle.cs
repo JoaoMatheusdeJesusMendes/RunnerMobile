@@ -30,12 +30,12 @@ public class SpawnObstacle : MonoBehaviour
     private int timeSpawn = 0;
     
     //variavel que conta o tempo
-    private float time = 0;
+    private int time = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("Timer", 1f, 1f);
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class SpawnObstacle : MonoBehaviour
         if (time == 0)
         {
             //randomiza o tempo de spawn para os objetos
-            timeSpawn = Random.Range(3, 11);
+            timeSpawn = Random.Range(3, 9);
         }
         
         //verifica se o tempo é igual ao designado para spawnar o proximo obstaculo
@@ -66,13 +66,12 @@ public class SpawnObstacle : MonoBehaviour
             timeSpawn = 0;
             randObst = 0;
         }
-        Timer();
-        Debug.Log(time);
+        Debug.Log(timeSpawn);
     }
 
     private void Timer()
     {
-        time += 0.1f;
+        time += 1;
     }
     private void SpawnObst(int aux)
     {

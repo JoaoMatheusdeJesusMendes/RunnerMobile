@@ -70,7 +70,6 @@ GameObject:
   - component: {fileID: 6745389311680988254}
   - component: {fileID: 6745389311680988257}
   - component: {fileID: 6745389311680988252}
-  - component: {fileID: 6745389311680988253}
   - component: {fileID: 6745389311680988251}
   m_Layer: 8
   m_Name: SoloObstacle
@@ -186,19 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedObstacle: 10
---- !u!114 &6745389311680988253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6745389311680988259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ad467832a17e64d98246b752f3c201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacle: {fileID: 6745389311680988259}
 --- !u!50 &6745389311680988251
 Rigidbody2D:
   serializedVersion: 4

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    [SerializeField] private GameObject obstacle;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +14,20 @@ public class Destroy : MonoBehaviour
     {
         
     }
-
+    
+    //se colidir com obstaculo despawna ele 
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.layer == 8)
+        {
+            //destroi o objeto   
+            DestroyObstacle(other.gameObject);
+        }
+    }
+    
     //função que destrói o objeto
-    public void DestroyObstacle()
+    public void DestroyObstacle(GameObject obst)
     {
         //destroi obstaculo
-        Destroy(obstacle);
+        Destroy(obst);
     }
 }
