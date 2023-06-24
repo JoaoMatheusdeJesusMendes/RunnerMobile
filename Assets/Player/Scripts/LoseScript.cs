@@ -12,10 +12,17 @@ public class LoseScript : MonoBehaviour
     //variavel que recebe o menu da interface
     [SerializeField] private GameObject interfacePlayer;
     
+    //pega o script de guardar pontos
+     private PointSave pointSave;
+
+    //pega o script de marcar pontos
+    private PointMaker pointMaker;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointSave = GetComponent<PointSave>();
+        pointMaker = GetComponent<PointMaker>();
     }
 
     // Update is called once per frame
@@ -37,6 +44,8 @@ public class LoseScript : MonoBehaviour
             interfacePlayer.SetActive(false);
             //ativa menu de game over
             gameOver.SetActive(true);
+            //salva pontuação
+            pointSave.infos.addDeque(pointMaker.points);
         }
         
         //se colidir com o obstaculo bone e o player se mover
@@ -57,6 +66,8 @@ public class LoseScript : MonoBehaviour
                 interfacePlayer.SetActive(false);
                 //ativa menu de game over
                 gameOver.SetActive(true);
+                //salva pontuação
+                pointSave.infos.addDeque(pointMaker.points);
             }
         }
     } 
