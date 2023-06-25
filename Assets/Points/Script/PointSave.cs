@@ -22,7 +22,7 @@ public class PointSave : MonoBehaviour
     }
     
     //salva jogo em binario
-    public void Save(Deque d)
+    public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
         //caminho de save
@@ -30,7 +30,7 @@ public class PointSave : MonoBehaviour
 
         FileStream file = File.Create(path + "/savegame.save");
         
-        bf.Serialize(file, d);
+        bf.Serialize(file, infos);
         file.Close();
     }
     
