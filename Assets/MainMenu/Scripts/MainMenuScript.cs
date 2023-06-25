@@ -11,17 +11,31 @@ public class MainMenuScript : MonoBehaviour
     //variavel que recebe o menu principal
     [SerializeField] private GameObject mainMenu;
     
+    //variavel que recebe o menu de pontuação
+    [SerializeField] private GameObject pointsMenu;
+    
     //recebe o menu de opções
     [SerializeField] private GameObject optionsMenu;
-    
-    //função que inicia o jogo
+
+
+    //procedimento que inicia o jogo
     public void ButtonStart()
     {
         //inicia o game
         SceneManager.LoadScene(nameGame);
     }
     
-    //função que inicia as opções
+    //procedimento que inicia o menu de pontuações
+    public void PointsStart()
+    {
+        //Desativa o menu principal
+        mainMenu.SetActive(false);
+        
+        //Ativa o menu de pontuação
+        pointsMenu.SetActive(true);
+    }
+    
+    //procedimento que inicia as opções
     public void OptionActive()
     {
         //Desativa o menu principal

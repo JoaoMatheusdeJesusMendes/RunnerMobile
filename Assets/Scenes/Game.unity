@@ -1435,6 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  player: {fileID: 1203126650}
 --- !u!114 &1203126658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,6 +2091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: Menu
   game: Game
+  player: {fileID: 1203126650}
 --- !u!1 &1767708539
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,10 +11,16 @@ public class ButtonsGameOver : MonoBehaviour
     //variavel que recebe o game
     [SerializeField] private string game;
     
+    //pega o rigidybody do player
+    [SerializeField] private GameObject player;
+    
+    //pega o script de guardar pontos
+    private PointSave pointSave;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointSave = player.GetComponent<PointSave>();
     }
 
     // Update is called once per frame
@@ -32,6 +38,8 @@ public class ButtonsGameOver : MonoBehaviour
     //volta para o menu principal
     public void ReturnMainMenu()
     {
+        //salva em arquivo
+        //pointSave.Save(pointSave.infos);
         SceneManager.LoadScene(mainMenu);
     }
 }

@@ -867,7 +867,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1219597160}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: OptionActive
+        m_MethodName: PointsStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2830,6 +2830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameGame: Game
   mainMenu: {fileID: 1665140438}
+  pointsMenu: {fileID: 1319027332}
   optionsMenu: {fileID: 524680810}
 --- !u!114 &1219597161
 MonoBehaviour:
@@ -2865,7 +2866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1319027333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,7 +3241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1665140439
 MonoBehaviour:
   m_ObjectHideFlags: 0
