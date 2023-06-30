@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking.Match;
 
 public class LoseScript : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class LoseScript : MonoBehaviour
     //variavel que recebe o menu de game over
     [SerializeField] private GameObject gameOver;
     
+    //recebe a camera do player
+    [SerializeField] private GameObject camera;
+
     //variavel que recebe o menu da interface
     [SerializeField] private GameObject interfacePlayer;
     
@@ -38,14 +42,17 @@ public class LoseScript : MonoBehaviour
             //desativa scripts após colisão do player
             Spawn.GetComponent<SpawnObstacle>().enabled = false;
             other.GetComponent<MoveObstacle>().enabled = false;
+            camera.GetComponent<ReverseCamera>().enabled = false;
             GetComponent<Moviment>().enabled = false;
+            Destroy(GetComponent<Rigidbody2D>());
             GetComponent<Rigidbody2D>().mass = 0;
             //desativa interface
             interfacePlayer.SetActive(false);
             //ativa menu de game over
             gameOver.SetActive(true);
             //salva pontuação
-            pointSave.infos.addDeque(pointMaker.points);
+            pointSave.addFila(pointMaker.points);
+            Debug.Log(pointSave.higgest);
         }
         
         //se colidir com o obstaculo bone e o player se mover
@@ -60,14 +67,16 @@ public class LoseScript : MonoBehaviour
                 //desativa scripts após colisão do player
                 Spawn.GetComponent<SpawnObstacle>().enabled = false;
                 other.GetComponent<MoveObstacle>().enabled = false;
+                camera.GetComponent<ReverseCamera>().enabled = false;
                 GetComponent<Moviment>().enabled = false;
+                Destroy(GetComponent<Rigidbody2D>());
                 GetComponent<Rigidbody2D>().mass = 0;
                 //desativa interface
                 interfacePlayer.SetActive(false);
                 //ativa menu de game over
                 gameOver.SetActive(true);
                 //salva pontuação
-                pointSave.infos.addDeque(pointMaker.points);
+                pointSave.addFila(pointMaker.points);
             }
         }
     } 

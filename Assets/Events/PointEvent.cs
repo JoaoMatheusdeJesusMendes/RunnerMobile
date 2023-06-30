@@ -13,6 +13,18 @@ public class PointEvent : MonoBehaviour
         {
             enteredTheCollider.Invoke();
         }
+        //se colidir com o obstaculo bone e o player se mover
+        else if (other.gameObject.layer == 9)
+        {
+            //mudar depois para mobile //////////////////////////
+            //Touch touch = Input.GetTouch(0);
+            //se o player segurar a tela do celular ele agacha
+            //if (touch.phase == TouchPhase.Stationary || Input.GetKeyDown(KeyCode.S))
+            if (GetComponent<Rigidbody2D>().velocity.y == 0 || !Input.GetKey(KeyCode.S))
+            {
+                enteredTheCollider.Invoke();
+            }
+        }
     } 
 }
 

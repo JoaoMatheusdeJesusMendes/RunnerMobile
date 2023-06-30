@@ -2759,6 +2759,7 @@ GameObject:
   - component: {fileID: 1219597157}
   - component: {fileID: 1219597160}
   - component: {fileID: 1219597161}
+  - component: {fileID: 1219597162}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2848,6 +2849,19 @@ MonoBehaviour:
   aMixer: {fileID: 24100000, guid: ade6ee88ecf62d849b0c1a028452c338, type: 2}
   mainMenu: {fileID: 1665140438}
   optionsMenu: {fileID: 524680810}
+--- !u!114 &1219597162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219597156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f1959f702c8074fb06560d75bc4759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pont: {fileID: 497040281}
 --- !u!1 &1319027332
 GameObject:
   m_ObjectHideFlags: 0

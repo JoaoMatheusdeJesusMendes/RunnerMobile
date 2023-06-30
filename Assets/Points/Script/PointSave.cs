@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class PointSave : MonoBehaviour
 {
-    public Deque infos;
+    public int higgest = -1;
+    public int [] infos = new int[3];
+    private int size = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +24,14 @@ public class PointSave : MonoBehaviour
 
     }
     
-    //salva jogo em binario
+    //salva jogo
     public void Save()
     {
+        string json = JsonUtility.ToJson(infos);
+        PlayerPrefs.SetString("points", json);
+        PlayerPrefs.SetInt("maior", higgest);
+        PlayerPrefs.SetInt("tamanho", size);
+        /*
         BinaryFormatter bf = new BinaryFormatter();
         //caminho de save
         string path = Application.persistentDataPath;
@@ -32,11 +40,22 @@ public class PointSave : MonoBehaviour
         
         bf.Serialize(file, infos);
         file.Close();
+        */
     }
     
-    //recebe valores em binario
+    //recebe valores salvos
     public void Load()
     {
+        if (!PlayerPrefs.HasKey("points"))
+        {
+            print("Não achou arquivo salvo");
+        }
+
+        string json = PlayerPrefs.GetString("points");
+        infos = JsonUtility.FromJson<int[]>(json);
+        higgest = PlayerPrefs.GetInt("maior");
+        size = PlayerPrefs.GetInt("tamanho");
+        /*
         BinaryFormatter bf = new BinaryFormatter();
         //caminho de save
         string path = Application.persistentDataPath;
@@ -49,9 +68,51 @@ public class PointSave : MonoBehaviour
             infos = (Deque)bf.Deserialize(file);
             file.Close();
         }
+        */
+    }
+    
+    //adiciona ao vetor
+    public void addFila(int value)
+    {
+        //ajusta maior valor
+        Higgest(value);
+        //se é a primeira adição
+        if (size == 0)
+        {
+            infos[size] = value;
+            size++;
+        }
+        //para proximas adições
+        else
+        {
+            if (size == 3)
+            {
+                //move todos valores de posição
+                infos[0] = infos[1];
+                infos[1] = infos[2];
+                infos[2] = infos[3];
+                infos[3] = value;
+            }
+
+            if (size > 3)
+            {
+                infos[size] = value;
+                size++;
+            }
+        }
+    }
+    
+    //ajusta maior valor
+    private void Higgest(int value)
+    {
+        if (value > higgest)
+        {
+            higgest = value;
+        }
     }
 }
-
+/*
+[Serializable]
 public class Node
 {
     public int data = -1;
@@ -59,6 +120,7 @@ public class Node
     public Node next;
 }
 
+[Serializable]
 public class Deque
 {
     //fim do deque
@@ -84,14 +146,28 @@ public class Deque
             end.data = value;
             first.data = value;
             size += 1;
+            higgest = value;
         }
         else
         {
-            aux.data = value;
-            aux.previous = end;
-            end = aux;
-            size += 1;
-
+            if (size == 1)
+            {
+                aux.data = value;
+                aux.previous = end;
+                first.next = aux;
+                end = aux;
+                size += 1;
+                higgest = higgestValue();
+            }
+            else
+            {
+                aux.data = value;
+                aux.previous = end;
+                end = aux;
+                size += 1;
+                higgest = higgestValue();
+            }
+            
             if (size > 3)
             {
                 removeDeque();
@@ -119,5 +195,5 @@ public class Deque
         }
 
         return higgest;
-    }
-}
+    }  
+}*/

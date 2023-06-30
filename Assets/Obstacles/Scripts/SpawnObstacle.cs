@@ -53,7 +53,7 @@ public class SpawnObstacle : MonoBehaviour
         if (time == 0)
         {
             //randomiza o tempo de spawn para os objetos
-            timeSpawn = Random.Range(3, 9);
+            timeSpawn = Random.Range(3, 7);
         }
         
         //verifica se o tempo é igual ao designado para spawnar o proximo obstaculo

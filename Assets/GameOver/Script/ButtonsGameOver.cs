@@ -15,7 +15,7 @@ public class ButtonsGameOver : MonoBehaviour
     [SerializeField] private GameObject player;
     
     //pega o script de guardar pontos
-    private PointSave pointSave;
+    public PointSave pointSave;
     
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class ButtonsGameOver : MonoBehaviour
     public void ReturnMainMenu()
     {
         //salva em arquivo
-        //pointSave.Save();
+        pointSave.Save();
         SceneManager.LoadScene(mainMenu);
     }
 }
