@@ -25,12 +25,29 @@ public class PointSave : MonoBehaviour
     }
     
     //salva jogo
-    public void Save()
+    public void SavePoints()
     {
-        string json = JsonUtility.ToJson(infos);
-        PlayerPrefs.SetString("points", json);
+        //string json = JsonUtility.ToJson(infos);
+        //salva informações do player
+        if (size >= 1)
+        {
+            PlayerPrefs.SetInt("points1", infos[0]);
+            PlayerPrefs.Save();
+        }
+        if (size >= 2)
+        {
+            PlayerPrefs.SetInt("points2", infos[1]);
+            PlayerPrefs.Save();
+        }
+        if (size >= 3)
+        {
+            PlayerPrefs.SetInt("points3", infos[2]);
+            PlayerPrefs.Save();
+        }
         PlayerPrefs.SetInt("maior", higgest);
+        PlayerPrefs.Save();
         PlayerPrefs.SetInt("tamanho", size);
+        PlayerPrefs.Save();
         /*
         BinaryFormatter bf = new BinaryFormatter();
         //caminho de save
@@ -44,17 +61,33 @@ public class PointSave : MonoBehaviour
     }
     
     //recebe valores salvos
-    public void Load()
-    {
-        if (!PlayerPrefs.HasKey("points"))
+    public void LoadPoints()
+    { 
+        if (!PlayerPrefs.HasKey("points1"))
         {
             print("Não achou arquivo salvo");
         }
-
-        string json = PlayerPrefs.GetString("points");
-        infos = JsonUtility.FromJson<int[]>(json);
-        higgest = PlayerPrefs.GetInt("maior");
         size = PlayerPrefs.GetInt("tamanho");
+        
+        if (size >= 1)
+        {
+            infos[0] = PlayerPrefs.GetInt("points1");
+            PlayerPrefs.Save();
+        }
+        if (size >= 2)
+        {
+            infos[1] = PlayerPrefs.GetInt("points2");
+            PlayerPrefs.Save();
+        }
+        if (size >= 3)
+        {
+            infos[2] = PlayerPrefs.GetInt("points3");
+            PlayerPrefs.Save();
+        }
+        //string json = PlayerPrefs.GetString("points");
+        //infos = JsonUtility.FromJson<int[]>(json);
+        higgest = PlayerPrefs.GetInt("maior");
+        
         /*
         BinaryFormatter bf = new BinaryFormatter();
         //caminho de save
@@ -90,11 +123,10 @@ public class PointSave : MonoBehaviour
                 //move todos valores de posição
                 infos[0] = infos[1];
                 infos[1] = infos[2];
-                infos[2] = infos[3];
-                infos[3] = value;
+                infos[2] = value;
             }
 
-            if (size > 3)
+            if (size < 3)
             {
                 infos[size] = value;
                 size++;

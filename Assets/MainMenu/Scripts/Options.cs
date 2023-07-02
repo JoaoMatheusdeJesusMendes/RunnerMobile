@@ -41,6 +41,6 @@ public class Options : MonoBehaviour
     //função do slider das opções
     public void SliderVolume()
     {
-        aMixer.SetFloat("VolumeGame", -80 + (volume.value * 17));
+        aMixer.SetFloat("VolumeGame", -80 + (volume.value * 60));
     }
 }

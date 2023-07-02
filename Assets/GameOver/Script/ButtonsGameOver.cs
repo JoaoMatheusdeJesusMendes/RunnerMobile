@@ -39,7 +39,7 @@ public class ButtonsGameOver : MonoBehaviour
     public void ReturnMainMenu()
     {
         //salva em arquivo
-        pointSave.Save();
+        pointSave.SavePoints();
         SceneManager.LoadScene(mainMenu);
     }
 }

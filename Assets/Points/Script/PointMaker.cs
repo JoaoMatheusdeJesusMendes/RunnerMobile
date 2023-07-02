@@ -16,7 +16,7 @@ public class PointMaker : MonoBehaviour
     void Start()
     {
         pointSave = player.GetComponent<PointSave>();
-        pointSave.Load();
+        pointSave.LoadPoints();
         points = 0;
     }
 
@@ -29,6 +29,5 @@ public class PointMaker : MonoBehaviour
     public void PointMakerPlayer()
     {
         points += 1;
-        Debug.Log(points);
     }
 }

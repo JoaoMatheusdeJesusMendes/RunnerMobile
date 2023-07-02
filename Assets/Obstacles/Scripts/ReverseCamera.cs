@@ -23,7 +23,6 @@ public class ReverseCamera : MonoBehaviour
     {
         //randomiza tempo
         randomTime = Random.Range(5, 20);
-        Debug.Log(randomTime);
         
         //se tempo igual ao tempo randomizado
         if (time == randomTime)

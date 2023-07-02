@@ -66,7 +66,6 @@ public class SpawnObstacle : MonoBehaviour
             timeSpawn = 0;
             randObst = 0;
         }
-        Debug.Log(timeSpawn);
     }
 
     private void Timer()
