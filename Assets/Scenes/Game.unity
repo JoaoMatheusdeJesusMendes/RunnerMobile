@@ -1254,6 +1254,7 @@ GameObject:
   - component: {fileID: 1203126656}
   - component: {fileID: 1203126658}
   - component: {fileID: 1203126659}
+  - component: {fileID: 1203126660}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1290,18 +1291,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004500717, y: -0.009676777}
+  m_Offset: {x: 0.004500717, y: -0.00021927804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.26, y: 0.33}
+    oldSize: {x: 0.19, y: 0.29}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26186526, y: 0.32020974}
+  m_Size: {x: 0.26186526, y: 0.30129474}
   m_EdgeRadius: 0
 --- !u!50 &1203126653
 Rigidbody2D:
@@ -1365,7 +1366,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8fc10f8f5ec5a9e478d439ffd85e9a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2331e883775e79d49a4c1fc6274820e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1464,6 +1465,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151d42f68f7355240882d23fc1780bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  higgest: -1
+  infos: 000000000000000000000000
+--- !u!95 &1203126660
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203126650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10a4be55490c31d4b93131497636e1b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1304375695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2116,7 @@ MonoBehaviour:
   mainMenu: Menu
   game: Game
   player: {fileID: 1203126650}
+  pointSave: {fileID: 0}
 --- !u!1 &1767708539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,12 +2587,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa12d1b80189a445be2bd14d9ce4db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airObstacle: {fileID: 8709964722212759674, guid: 73a2977e6fc811649bae62853ba8d2ef, type: 3}
-  soloObstacle: {fileID: 6745389311680988259, guid: fc8c7fb8a99d90e4f840ba15cef2b440, type: 3}
-  bone: {fileID: 8993018922900542025, guid: f298f65539425464b9790201df3dec8b, type: 3}
-  airSpawn: {fileID: 811654686}
-  soloSpawn: {fileID: 138056895}
-  boneSpawn: {fileID: 608444178}
+  airObstacle: {fileID: 6036525199405088242, guid: 73a2977e6fc811649bae62853ba8d2ef, type: 3}
+  soloObstacle: {fileID: 433974045638546144, guid: fc8c7fb8a99d90e4f840ba15cef2b440, type: 3}
+  bone: {fileID: 2978406965285443050, guid: f298f65539425464b9790201df3dec8b, type: 3}
+  airSpawn: {fileID: 8046293557561038730, guid: 73a2977e6fc811649bae62853ba8d2ef, type: 3}
+  soloSpawn: {fileID: 490809665266227433, guid: fc8c7fb8a99d90e4f840ba15cef2b440, type: 3}
+  boneSpawn: {fileID: 5522069566551447115, guid: f298f65539425464b9790201df3dec8b, type: 3}
 --- !u!1 &2050637109
 GameObject:
   m_ObjectHideFlags: 0
