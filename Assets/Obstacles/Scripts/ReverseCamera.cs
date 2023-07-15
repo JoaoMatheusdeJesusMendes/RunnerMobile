@@ -12,6 +12,9 @@ public class ReverseCamera : MonoBehaviour
 
     //inverte camera
     [SerializeField] private GameObject camera;
+    
+    //inverte interface
+    [SerializeField] private GameObject inter;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,7 @@ public class ReverseCamera : MonoBehaviour
         {
             time = 0;
             camera.transform.Rotate(0, 0, -180);
+            inter.transform.Rotate(0, 0, -180);
         }
     }
     

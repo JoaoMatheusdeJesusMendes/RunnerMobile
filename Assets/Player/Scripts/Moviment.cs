@@ -38,10 +38,10 @@ public class Moviment : MonoBehaviour
             }
         }
         //mudar depois para mobile //////////////////////////
-        //Touch touch = Input.GetTouch(0);
+        Touch touch = Input.GetTouch(0);
         //se o player segurar a tela do celular ele agacha
-        //if (touch.phase == TouchPhase.Stationary || Input.GetKeyDown(KeyCode.S))
-        if(Input.GetKeyDown(KeyCode.S))
+        if (touch.phase == TouchPhase.Stationary || Input.GetKeyDown(KeyCode.S))
+        //if(Input.GetKeyDown(KeyCode.S))
         { 
             Squat();
         }
